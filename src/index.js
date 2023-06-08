@@ -5,12 +5,10 @@ const inputUserName = document.getElementById("input-username");
 const inputEmail = document.getElementById("input-email");
 const inputAddress = document.getElementById("input-address");
 const inputIsAdmin = document.getElementById("input-admin");
-
+const imageInput = document.getElementById('input-image');
 const tableBody = document.querySelector('#table tbody');
 
-
 const userNameList = document.querySelector('.user-name');
-
 
 btnSubmit.addEventListener('click', () => {
   event.preventDefault();
@@ -22,6 +20,7 @@ btnSubmit.addEventListener('click', () => {
 
   const existingRow = Array.from(tableBody.rows).find(row =>
     row.cells[0].textContent === userName);
+  console.log(existingRow);
 
   if (existingRow) {
     existingRow.cells[1].textContent = email;
@@ -42,6 +41,20 @@ btnSubmit.addEventListener('click', () => {
 
     const newCell4 = newRow.insertCell();
     newCell4.textContent = isAdminChecked(isAdmin);
+
+    const imageCell = newRow.insertCell();
+
+    if (imageInput.files.length > 0) {
+      const imageFile = imageInput.files[0];
+      const imageURL = URL.createObjectURL(imageFile);
+
+      const imageElement = document.createElement('img');
+      imageElement.src = imageURL;
+      imageElement.alt = 'User Image';
+      imageElement.classList.add('table-image');
+
+      imageCell.appendChild(imageElement);
+    }
   }
 });
 

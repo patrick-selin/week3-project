@@ -7,6 +7,12 @@
     <script src="./src/index.js" defer></script>
 
     <title>DOM intro Title</title>
+    <style>
+      .table-image {
+        width: 64px;
+        height: 64px;
+      }
+    </style>
   </head>
   <body>
     <h1>Weekly Exercises 2</h1>
@@ -27,13 +33,18 @@
         name="input-admin"
         value="admin"
       />
-      <label for="input-admin">Is Admin</label><br /><br /><br />
+      <label for="input-admin">Is Admin</label><br /><br />
+
+      <label for="input-image">Choose a profile picture:</label>
+      <input type="file" id="input-image" name="input-image" />
+
+      <br /><br /><br />
 
       <button id="submit-data">Submit</button>
       <button id="empty-table">Empty table</button> <br /><br />
     </form>
 
-    <br /><br /><br />
+    <br /><br />
 
     <table id="table">
       <thead>
