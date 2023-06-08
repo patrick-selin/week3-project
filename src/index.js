@@ -29,7 +29,6 @@ btnSubmit.addEventListener('click', () => {
 
     const newCell4 = newRow.insertCell();
 
-
     if (isAdmin) {
         newCell4.textContent = "X";
     } else {
