@@ -9,12 +9,17 @@ fetch('./001_11s5_2022m12.json')
         const populations = data.dataset.value;
 
         console.log(municipalities);
-
         console.log(typeof municipalities)
+        console.log(Object.keys(municipalities))
+
+
+        const arvot = Object.keys(municipalities)
+        arvot.forEach((key) => {
+            console.log(`${municipalities[key]}`);
+        });
       
-        
         for (let i = 0; i < Object.keys(municipalities).length; i++) {
-            console.log(municipalities);
+            
             const municipality = municipalities[i];        
             const population = populations[i];
 
