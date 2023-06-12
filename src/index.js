@@ -7,20 +7,10 @@ fetch('./001_11s5_2022m12.json')
 
         const municipalities = data.dataset.dimension.Alue.category.label;
         const populations = data.dataset.value;
-
-        console.log(municipalities);
-        console.log(typeof municipalities)
-        console.log(Object.keys(municipalities))
-
-
-        const arvot = Object.keys(municipalities)
-        arvot.forEach((key) => {
-            console.log(`${municipalities[key]}`);
-        });
       
         for (let i = 0; i < Object.keys(municipalities).length; i++) {
             
-            const municipality = municipalities[i];        
+            const municipality = Object.values(municipalities)[i];    
             const population = populations[i];
 
             const row = document.createElement('tr');
