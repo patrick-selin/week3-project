@@ -1,4 +1,4 @@
-fetch('./001_11s5_2022m12.json')
+fetch('https://statfin.stat.fi/PxWeb/sq/4e244893-7761-4c4f-8e55-7a8d41d86eff ')
     .then((response) => {
         return response.json();
     })
@@ -22,6 +22,17 @@ fetch('./001_11s5_2022m12.json')
             const populationCell = document.createElement('td');
             populationCell.textContent = population;
             row.appendChild(populationCell);
+
+            // kolmas
+            const employmentCell = document.createElement('td');
+            employmentCell.textContent = "populatio num";
+            row.appendChild(employmentCell);
+
+            // neljäs
+            const empPerCell = document.createElement('td');
+            empPerCell.textContent = "% calc func";
+            row.appendChild(empPerCell);
+
 
             tbody.appendChild(row);
         }
