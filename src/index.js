@@ -44,10 +44,20 @@ fetch('https://statfin.stat.fi/PxWeb/sq/4e244893-7761-4c4f-8e55-7a8d41d86eff ')
 
             const empPerCell = document.createElement('td');
             let empPer = (emp[i] / populations[i]) * 100;
-            empPerCell.textContent = empPer.toFixed(2);;
+            empPerCell.textContent = empPer.toFixed(2) + "%";
+
+            if (empPer > 45) {
+                console.log("yli");
+                row.style.backgroundColor = "#abffbd";
+            }
+
+            if (empPer < 25) {
+                console.log("yli");
+                row.style.backgroundColor = "#ff9e9e";
+            }
+            
             row.appendChild(empPerCell);
-
-
+       
             tbody.appendChild(row);
         }
         
